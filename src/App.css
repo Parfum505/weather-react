@@ -1,10 +1,34 @@
-.App-header {
+.App {
+  margin: 0;
+  padding: 0;
   background-color: #282c34;
+  background-image: url("./assets/winter.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.3s ease-out;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 16px;
   color: white;
+  position: relative;
+}
+.App.summer {
+  background-image: url("./assets/summer.jpeg");
+}
+.App::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.3;
+}
+.results .result {
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 10px;
+  box-shadow: 4px 4px 11px #000;
+  margin: 0 10px 20px;
+  padding: 10px;
 }
