@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Courgette);
 .App {
   margin: 0;
   padding: 0;
@@ -8,8 +9,12 @@
   transition: 0.3s ease-out;
   min-height: 100vh;
   font-size: 16px;
+  font-family: 'Courgette', cursive;
   color: white;
   position: relative;
+}
+.App .title {
+
 }
 .App.summer {
   background-image: url("./assets/summer.jpeg");
@@ -24,6 +29,18 @@
   right: 0;
   background-color: black;
   opacity: 0.3;
+  z-index: 1;
+}
+.App > .container {
+  z-index: 2;
+}
+.App .title {
+  font-size: 2.4em;
+  text-shadow: 5px 5px 6px #000;
+}
+.App .city {
+  font-size: 2.4em;
+  text-shadow: 5px 5px 6px #000;
 }
 .results .result {
   background-color: rgba(255, 255, 255, .8);
@@ -31,4 +48,22 @@
   box-shadow: 4px 4px 11px #000;
   margin: 0 10px 20px;
   padding: 10px;
+  color: black;
+}
+.result .temp {
+  font-size: 1.8em;
+}
+.result .date {
+  font-size: 1.3em;
+}
+.App .limit {
+  font-size: 1.1em;
+}
+.App .error {
+  font-size: 2em;
+  color: #36dca7;
+}
+.App .limit .custom-control-input:checked~.custom-control-label::before {
+  background-color: #36dca7;
+  border-color: #36dca7;
 }

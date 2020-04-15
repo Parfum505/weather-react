@@ -14,8 +14,8 @@ function Form(props) {
     }
     return (
         <div className="row justify-content-center">
-            <form className=" col-11 col-sm-10 col-md-7 col-lg-5 mb-5 needs-validation" onSubmit={handleSubmitForm} action="" noValidate>
-                <div className="input-group input-group-lg">
+            <form className=" col-11 col-sm-10 col-md-7 col-lg-5 mb-3 needs-validation" onSubmit={handleSubmitForm} action="" noValidate>
+                <div className="input-group-lg">
                     <input type="text"
                            name="city"
                            className="form-control"
