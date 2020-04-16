@@ -5,18 +5,22 @@ function LimitDays(props) {
         name: 'limit',
         val: [3, 5, 7]
     }
+    function handleChange(e) {
+        e.target.parentNode.classList.toggle('active');
+        props.changeLimits(e.target.value);
+    }
     const radioBtns = limits.val.map((item, i) => {
         return (
-            <div key={i} className="custom-control custom-radio custom-control-inline">
+            <label key={i} className={`custom-control-label custom-control-inline ${props.limits === item ? 'active' : ''}`}>
                 <input type="radio"
                        className="custom-control-input"
                        checked={props.limits === item}
                        id={`${limits.name}${item}`}
                        name={limits.name}
                        value={item}
-                onChange={(e) => props.changeLimits(e.target.value)}/>
-                <label className="custom-control-label" htmlFor={`${limits.name}${item}`}>{item}</label>
-            </div>
+                onChange={handleChange}/>
+                <span className="">{item}</span>
+            </label>
         );
     });
     return (

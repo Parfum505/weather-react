@@ -63,7 +63,24 @@
   font-size: 2em;
   color: #36dca7;
 }
-.App .limit .custom-control-input:checked~.custom-control-label::before {
+.App .limit .custom-control-label {
+    padding: 0 0 0 20px;
+    cursor: pointer;
+}
+.App .limit .custom-control-label::after,
+.App .limit .custom-control-label::before {
+    border-radius: 50%;
+    background-color: #fff;
+    border-color: #fff;
+    left: 0;
+}
+.App .limit .custom-control-label.active::before {
   background-color: #36dca7;
   border-color: #36dca7;
+}
+.App .limit .custom-control-label.active::after {
+  left: 0.26em;
+  top: 0.5em;
+  width: 0.4em;
+  height: 0.4em;
 }
