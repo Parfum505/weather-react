@@ -7,7 +7,7 @@ function LimitDays(props) {
     }
     function handleChange(e) {
         e.target.parentNode.classList.toggle('active');
-        props.changeLimits(e.target.value);
+        props.changeLimit(e.target.value * 1);
     }
     const radioBtns = limits.val.map((item, i) => {
         return (

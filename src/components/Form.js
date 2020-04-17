@@ -8,7 +8,7 @@ function Form(props) {
         if (!city.trim()){
             form.classList.add('was-validated');
         } else {
-            props.search(city);
+            props.newCity(city);
             form.classList.remove('was-validated');
         }
     }

@@ -2,22 +2,16 @@
 .App {
   margin: 0;
   padding: 0;
-  background-color: #282c34;
-  background-image: url("./assets/winter.jpeg");
-  background-size: cover;
-  background-position: bottom;
-  transition: 0.3s ease-out;
+  background: #282c34 linear-gradient(#360033, #0b8793);
+  transition: 0.8s ease-out;
   min-height: 100vh;
   font-size: 16px;
   font-family: 'Courgette', cursive;
   color: white;
   position: relative;
 }
-.App .title {
-
-}
 .App.summer {
-  background-image: url("./assets/summer.jpeg");
+  background: #833ab4 linear-gradient(#833ab4, #fd1d1d, #fcb045);
 }
 .App::before {
   content: "";
