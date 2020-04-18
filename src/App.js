@@ -14,7 +14,11 @@ function App() {
     const [limit, setLimit] = useState(3);
 
     useEffect(() => {
-        setCity('Krakow');
+        const limit = JSON.parse(localStorage.getItem("limit"));
+        if (limit) setLimit(limit);
+        const savedForcast = JSON.parse(localStorage.getItem("forecast"));
+        const cityName = (savedForcast && savedForcast.city.name) ? savedForcast.city.name : 'Krakow';
+        setCity(cityName);
     }, []);
 
     useEffect(() => {
@@ -30,7 +34,7 @@ function App() {
                     setDaytemp(day.temp.day);
                     localStorage.setItem("forecast", JSON.stringify(result));
                 } else {
-
+                    setAppState({errorMsg: result.message, load: true});
                 }
             })
             .catch((error) => {
@@ -43,11 +47,12 @@ function App() {
     }
     function changeLimit(newLimit) {
         setLimit(newLimit);
+        localStorage.setItem("limit", newLimit);
     }
   return (
     <div className={daytemp > 20 ? 'App summer' : 'App'}>
-        <div className="container position-relative">
-            <h1 className="h3 title text-center pt-4 pb-4">Weather Forcast</h1>
+        <div className="container position-relative pb-4 pt-4">
+            <h1 className="h3 title text-center pb-4">Weather Forcast</h1>
             <Router>
                 <Switch>
                     <Route path={`/details/:id`}>

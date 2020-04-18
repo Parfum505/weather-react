@@ -8,25 +8,9 @@
   font-size: 16px;
   font-family: 'Courgette', cursive;
   color: white;
-  position: relative;
 }
 .App.summer {
   background: #833ab4 linear-gradient(#833ab4, #fd1d1d, #fcb045);
-}
-.App::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: black;
-  opacity: 0.3;
-  z-index: 1;
-}
-.App > .container {
-  z-index: 2;
 }
 .App .title {
   font-size: 2.4em;
@@ -96,14 +80,23 @@
   font-size: 1.8em;
   color: #e9cc00;
 }
-.App .details-container .city .date{
-  margin-right: 15px;
-  font-size: 0.8em;
-}
 .App .details {
   background-color: rgba(255, 255, 255, .8);
   border-radius: 10px;
   box-shadow: 4px 4px 11px #000;
-  /*padding: 10px;*/
+  padding: 10px 15px;
   color: black;
+}
+.App .details .date{
+    font-size: 1.4em;
+}
+.App .details .weather .temp-val {
+    font-size: 1.3em;
+}
+.App .details .weather .temp-feels {
+    font-size: 0.8em;
+}
+.App .details .weather .icon img {
+    width: 100px;
+    height: 100px;
 }

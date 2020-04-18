@@ -1,8 +1,10 @@
 import React from 'react';
 import LimitDays from "./LimitDays";
 import City from "./City";
+import DateTitle from "./DateTitle";
 import {Link} from "react-router-dom";
 import {dateFormate} from "../helpFunctions/convertations";
+import IconWeather from "./IconWeather";
 
 function Results(props) {
     const weather = props.forecast.list
@@ -12,12 +14,9 @@ function Results(props) {
                         return (
                             <li key={i} className="col-10 col-sm-6 col-md-4 col-lg-3">
                                 <Link className="result d-block text-decoration-none" to={`/details/${i}`}>
-                                    <div className="date text-center">{dateFormate(item.dt)}</div>
+                                    <DateTitle date={dateFormate(item.dt)}/>
                                     <div className="weather d-flex justify-content-around align-items-center">
-                                        <div className="icon">
-                                            <img className="img" alt="icon"
-                                                 src={`http://openweathermap.org/img/w/${temp_weather.icon}.png`} />
-                                        </div>
+                                        <IconWeather icon={temp_weather.icon}/>
                                         <div className="temp">{Math.round(item.temp.day)}&deg;C</div>
                                     </div>
                                     <div className="description text-center">{temp_weather.description}</div>
@@ -31,7 +30,7 @@ function Results(props) {
             <>
                 <City city={props.forecast.city.name} country={props.forecast.city.country}/>
                 <LimitDays limits={props.limit} changeLimit={props.changeLimit}/>
-                <ul className="row results list-unstyled justify-content-center">{weather}</ul>
+                <ul className="row results list-unstyled justify-content-center m-0">{weather}</ul>
             </>
             );
     }
