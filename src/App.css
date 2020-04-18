@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Courgette");
+.App {
+  margin: 0;
+  padding: 0;
+  background: #282c34 linear-gradient(#360033, #0b8793);
+  transition: 0.8s ease-out;
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: 'Courgette', cursive;
+  color: white;
+}
+.App.summer {
+  background: #833ab4 linear-gradient(#833ab4, #fd1d1d, #fcb045);
+}
+.App .title {
+  font-size: 2.4em;
+  text-shadow: 5px 5px 6px #000;
+}
+.App .city {
+  font-size: 2.4em;
+  text-shadow: 5px 5px 6px #000;
+}
+.results .result {
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 10px;
+  box-shadow: 4px 4px 11px #000;
+  margin: 0 10px 20px;
+  padding: 10px;
+  color: black;
+}
+.result .icon img {
+  display: block;
+  width: 75px;
+  height: 75px;
+}
+.result .temp {
+  font-size: 1.8em;
+}
+.result .date {
+  font-size: 1.5em;
+}
+.result .description {
+  font-size: 1.3em;
+}
+.result .show-details {
+  font-size: 0.7em;
+}
+.result:hover .show-details {
+  color: #03a9f4;
+}
+.App .limit {
+  font-size: 1.1em;
+}
+.App .error {
+  font-size: 2em;
+  color: #36dca7;
+}
+.App .limit .custom-control-label {
+    padding: 0 0 0 20px;
+    cursor: pointer;
+}
+.App .limit .custom-control-label::after,
+.App .limit .custom-control-label::before {
+    border-radius: 50%;
+    background-color: #fff;
+    border-color: #fff;
+    left: 0;
+}
+.App .limit .custom-control-label.active::before {
+  background-color: #36dca7;
+  border-color: #36dca7;
+}
+.App .limit .custom-control-label.active::after {
+  left: 0.26em;
+  top: 0.5em;
+  width: 0.4em;
+  height: 0.4em;
+}
+.App .details-container .city {
+  font-size: 1.8em;
+  color: #e9cc00;
+}
+.App .details {
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 10px;
+  box-shadow: 4px 4px 11px #000;
+  padding: 10px 15px;
+  color: black;
+}
+.App .details .date{
+    font-size: 1.4em;
+}
+.App .details .weather .temp-val {
+    font-size: 1.3em;
+}
+.App .details .weather .temp-feels {
+    font-size: 0.8em;
+}
+.App .details .weather .icon img {
+    width: 100px;
+    height: 100px;
+}
