@@ -1,10 +1,10 @@
 import React from 'react';
 
-function City({city, country}) {
+function City(props) {
     return (
-         ( city && city.length) ? (
+         ( props.city) ? (
             <div className="row justify-content-center flex-column">
-                <div className="col city mb-3 text-center">{city}, {country}</div>
+                <div className="col city mb-3 text-center">{props.city}, {props.country}</div>
             </div>
         ) : (<></>)
     );

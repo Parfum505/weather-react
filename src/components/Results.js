@@ -1,22 +1,19 @@
 import React from 'react';
 import LimitDays from "./LimitDays";
 import City from "./City";
+import {Link} from "react-router-dom";
+import {dateFormate} from "../helpFunctions/convertations";
 
 function Results(props) {
-    function dateFormate(date) {
-        const d = new Date(date*1000),
-            months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        return `${months[d.getMonth()]} ${d.getDate()}`
-    }
     const weather = props.forecast.list
                     .slice(0, props.limit)
                     .map((item,i) => {
                     const temp_weather = item.weather[0];
                         return (
                             <li key={i} className="col-10 col-sm-6 col-md-4 col-lg-3">
-                                <div className="result">
+                                <Link className="result d-block text-decoration-none" to={`/details/${i}`}>
                                     <div className="date text-center">{dateFormate(item.dt)}</div>
-                                    <div className="weather d-flex justify-content-around">
+                                    <div className="weather d-flex justify-content-around align-items-center">
                                         <div className="icon">
                                             <img className="img" alt="icon"
                                                  src={`http://openweathermap.org/img/w/${temp_weather.icon}.png`} />
@@ -24,7 +21,8 @@ function Results(props) {
                                         <div className="temp">{Math.round(item.temp.day)}&deg;C</div>
                                     </div>
                                     <div className="description text-center">{temp_weather.description}</div>
-                                </div>
+                                    <div className="show-details text-center mt-2">Show details &raquo;</div>
+                                </Link>
                             </li>
                         );
                     });
