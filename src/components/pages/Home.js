@@ -3,14 +3,14 @@ import Form from "../Form";
 import ErrorMsg from "../ErrorMsg";
 import Results from "../Results";
 
-function Home(params) {
+function Home(props) {
     return (
         <>
-            <Form newCity={params.newCity} />
-            { params.appState.errorMsg ? <ErrorMsg errorMsg={params.appState.errorMsg}/> : (
-                params.appState.load ? <Results forecast={params.forecast}
-                                         limit={params.limit}
-                                         changeLimit={params.changeLimit}/> :
+            <Form newCity={props.newCity} />
+            { props.appState.errorMsg ? <ErrorMsg errorMsg={props.appState.errorMsg}/> : (
+                props.appState.load ? <Results forecast={props.forecast}
+                                         limit={props.limit}
+                                         changeLimit={props.changeLimit}/> :
                     <div className="text-center">Loading...</div>)
             }
         </>

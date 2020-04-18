@@ -13,7 +13,7 @@ function Results(props) {
                     const temp_weather = item.weather[0];
                         return (
                             <li key={i} className="col-10 col-sm-6 col-md-4 col-lg-3">
-                                <Link className="result d-block text-decoration-none" to={`/details/${i}`}>
+                                <Link className="result d-block text-decoration-none" to={`/weather-react/details/${i}`}>
                                     <DateTitle date={dateFormate(item.dt)}/>
                                     <div className="weather d-flex justify-content-around align-items-center">
                                         <IconWeather icon={temp_weather.icon}/>

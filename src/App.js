@@ -55,10 +55,10 @@ function App() {
             <h1 className="h3 title text-center pb-4">Weather Forcast</h1>
             <Router>
                 <Switch>
-                    <Route path={`/details/:id`}>
-                        <Details forecast={forecast} />
+                    <Route path="/weather-react/details/:id">
+                        <Details forecast={forecast}/>
                     </Route>
-                    <Route path="/">
+                    <Route path="/weather-react/">
                         <Home appState={appState}
                               forecast={forecast}
                               newCity={newCity}

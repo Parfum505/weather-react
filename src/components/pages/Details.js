@@ -54,7 +54,7 @@ function Details(props) {
                         </div>
                     </div>
                     <div className="row justify-content-end">
-                        <Link className="col-auto" to="/">&laquo; Back to results</Link>
+                        <Link className="col-auto" to="/weather-react/">&laquo; Back to results</Link>
                     </div>
                 </div>
             </div>
