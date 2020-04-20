@@ -31,4 +31,4 @@ function LimitDays(props) {
     );
 }
 
-export default LimitDays;
+export default React.memo(LimitDays);
